@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Document Verification | AgFinTax Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f4f0e9",
+                        "surface-container-low": "#f7f3ec",
+                        "on-primary-container": "#7587a7",
+                        "on-tertiary-fixed-variant": "#613f20",
+                        "primary-fixed-dim": "#b5c7ea",
+                        "primary-fixed": "#d6e3ff",
+                        "secondary-container": "#fed255",
+                        "secondary-fixed-dim": "#ecc246",
+                        "on-primary-fixed": "#071c36",
+                        "surface-tint": "#4d5f7d",
+                        "outline-variant": "#c4c6ce",
+                        "primary-container": "#0b1f3a",
+                        "on-secondary-fixed-variant": "#584400",
+                        "inverse-surface": "#31302c",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e6e2db",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#44474d",
+                        "surface": "#fdf9f2",
+                        "primary": "#000615",
+                        "on-tertiary-fixed": "#2e1500",
+                        "tertiary-container": "#321800",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc1",
+                        "on-background": "#1c1c18",
+                        "surface-dim": "#dddad3",
+                        "surface-bright": "#fdf9f2",
+                        "secondary-fixed": "#ffe08e",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1ede6",
+                        "outline": "#75777e",
+                        "surface-variant": "#e6e2db",
+                        "background": "#fdf9f2",
+                        "on-secondary-fixed": "#241a00",
+                        "on-surface": "#1c1c18",
+                        "on-secondary-container": "#735a00",
+                        "on-tertiary-container": "#a87e59",
+                        "secondary": "#755b00",
+                        "on-primary-fixed-variant": "#364764",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#0d0400",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#eebd94",
+                        "inverse-primary": "#b5c7ea",
+                        "surface-container-high": "#ebe8e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #755b00;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#fdf9f2]/80 backdrop-blur-xl docked full-width top-0 z-50 bg-surface-container-low shadow-[0_1px_0_0_rgba(196,198,206,0.15)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0B1F3A] cursor-pointer" data-icon="menu">menu</span>
+<h1 class="text-2xl font-serif font-bold text-[#0B1F3A] italic">AgFinTax</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold Inter text-[#1c1c18]/60 hover:text-[#0B1F3A] transition-colors" href="#">Compliance</a>
+<a class="text-sm font-semibold Inter text-[#0B1F3A] border-b-2 border-[#755b00] pb-1" href="#">Verification</a>
+<a class="text-sm font-semibold Inter text-[#1c1c18]/60 hover:text-[#0B1F3A] transition-colors" href="#">Assets</a>
+</nav>
+<button class="text-sm font-semibold Inter bg-primary text-on-primary px-5 py-2 rounded-lg hover:opacity-80 scale-[0.99] transition-transform">
+                Get Certified
+            </button>
+</div>
+</header>
+<main class="flex-grow max-w-4xl mx-auto w-full px-6 py-12">
+<!-- Stepper -->
+<section class="mb-12">
+<div class="flex justify-between items-start relative">
+<!-- Progress Line -->
+<div class="absolute top-4 left-0 w-full h-[1px] bg-outline-variant/30 -z-10"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center text-xs font-bold ring-4 ring-surface">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/40">Entity</span>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex flex-col items-center gap-2 relative">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold ring-4 ring-surface shadow-lg">
+                        02
+                    </div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-secondary step-active">Upload Documents</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant/40 flex items-center justify-center text-xs font-bold ring-4 ring-surface">
+                        03
+                    </div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/40">Extraction</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant/40 flex items-center justify-center text-xs font-bold ring-4 ring-surface">
+                        04
+                    </div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/40">Audit</span>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant/40 flex items-center justify-center text-xs font-bold ring-4 ring-surface">
+                        05
+                    </div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/40">Finalize</span>
+</div>
+</div>
+</section>
+<!-- Main Content: Upload Wizard -->
+<div class="bg-surface-container-low rounded-3xl p-8 lg:p-12 shadow-sm">
+<header class="mb-10 text-center">
+<h2 class="text-3xl font-serif font-medium tracking-tight text-primary mb-2">Digital Vault Submission</h2>
+<p class="text-sm text-on-surface-variant font-light italic">Securely transmit financial instruments for accredited ledger verification.</p>
+</header>
+<!-- Accepted Types Chips -->
+<div class="flex flex-wrap justify-center gap-3 mb-10">
+<div class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="description">description</span>
+<span class="text-xs font-semibold text-primary">W-2</span>
+</div>
+<div class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="article">article</span>
+<span class="text-xs font-semibold text-primary">1040</span>
+</div>
+<div class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="account_balance">account_balance</span>
+<span class="text-xs font-semibold text-primary">Brokerage Statement</span>
+</div>
+</div>
+<!-- Drag and Drop Zone -->
+<div class="relative group cursor-pointer">
+<div class="border-2 border-dashed border-outline-variant/50 rounded-2xl bg-surface-container-lowest p-16 transition-all duration-300 group-hover:border-secondary/50 group-hover:bg-white flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="upload_file">upload_file</span>
+</div>
+<h3 class="text-lg font-serif font-medium text-primary mb-2">Deposit Ledger Files</h3>
+<p class="text-xs text-on-surface-variant max-w-xs">Drag and drop your PDF or JPEG files here, or <span class="text-secondary font-bold hover:underline">browse your system</span>.</p>
+</div>
+<!-- Watermark Background -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-[300px]" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- File Status List & Thumbnails -->
+<section class="mt-12 space-y-4">
+<h4 class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface/50 mb-4 px-2">Processing Queue</h4>
+<!-- Extracting Item -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 flex items-center gap-4 shadow-sm border border-outline-variant/10">
+<div class="w-16 h-20 bg-surface-container-low rounded-lg overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="Monochrome close up of a financial document with blurred text and official stamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTU-2NyecUoS0gazIOrXEz88lzUzdEmY6Vtg9Kr_HshMxhAFYaCE5q158RCdtmuDSvQraxr4AfCTfpVCmzoOMY2JYw8mK2ALzDZg68iRqCsSlRx1DATBUoJkLznObFi1GbzW0b3GCY2mjIg1r5pgM8gmw82WLkXy6g1bbrQDZqMyvDXv9gyG8pob52uZYAcYjQndutcw6zkPIkIYdejVpX9dTIPq-du3heCMybUV7b0BuL52vgKE2cnsLnPz2qScp7I-uevBO4yk9b"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/40 animate-pulse" data-icon="sync">sync</span>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-sm font-semibold text-primary">2023_W2_Marital_Joint.pdf</p>
+<p class="text-[10px] text-secondary font-bold uppercase tracking-wider">Extracting Metadata...</p>
+</div>
+<span class="text-xs font-mono text-on-surface-variant">2.4 MB</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+<!-- Parsed Item -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 flex items-center gap-4 shadow-sm border border-outline-variant/10">
+<div class="w-16 h-20 bg-surface-container-low rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Top down view of a tax form with professional calculators and ink pen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkNRFBKGElliYQWUMYtR-DadYNfN9VKWMF0cS22t68zGXsahV9Y7D6bSYzNQyLf_30UDpfu065aNpMgnJRdPZclabTO7KcUItPotJs909MT4cG6T2kSEDGYyobEGFm477QtFnCPLIowPxom23VkNujjy8OlFSz90ziIkUG2oMXI-QwUAGd8jz9LF160ua7yWSoPBYvvwWlFI7nfzY9dIv0iZ1qAyuEZ0yxaK0ZhwFPxvPusghEMr9-LibCS9mJLpwYgdUlxZLlOmtT"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center">
+<div>
+<p class="text-sm font-semibold text-primary">Brokerage_Tax_Statement_Q4.pdf</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-emerald-600 text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Verification Ready</span>
+</div>
+</div>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Navigation Actions -->
+<div class="mt-12 flex justify-between items-center">
+<button class="px-8 py-3 rounded-xl text-sm font-semibold text-secondary hover:bg-surface-container transition-all flex items-center gap-2 group">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1" data-icon="arrow_back">arrow_back</span>
+                    Previous
+                </button>
+<button class="px-10 py-3 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary text-sm font-semibold shadow-xl hover:opacity-90 scale-[0.99] active:scale-[0.97] transition-all flex items-center gap-2 group">
+                    Proceed to Audit
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-gradient-to-b from-[#0B1F3A] to-[#000615] w-full border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<h2 class="text-xl font-serif text-[#755b00] italic">AgFinTax Ledger</h2>
+<p class="text-xs font-light Inter tracking-wide text-[#fdf9f2]/70">© 2024 AgFinTax Ledger. All Rights Reserved. Accredited Financial Institution.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-xs font-light Inter tracking-wide text-[#fdf9f2]/70 hover:text-[#fdf9f2] hover:underline decoration-[#755b00] underline-offset-4" href="#">Terms of Service</a>
+<a class="text-xs font-light Inter tracking-wide text-[#fdf9f2]/70 hover:text-[#fdf9f2] hover:underline decoration-[#755b00] underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-xs font-light Inter tracking-wide text-[#fdf9f2]/70 hover:text-[#fdf9f2] hover:underline decoration-[#755b00] underline-offset-4" href="#">Regulatory Disclosures</a>
+<a class="text-xs font-light Inter tracking-wide text-[#fdf9f2]/70 hover:text-[#fdf9f2] hover:underline decoration-[#755b00] underline-offset-4" href="#">Contact Support</a>
+</div>
+</footer>
+</body></html>

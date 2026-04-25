@@ -1,0 +1,444 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ───────────────────────────────────────────────────────────
+   AgFinTax Certification Tool — Claude Design System port.
+   Palette: ink navy, gold, cream. Fonts: Fraunces + General Sans
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* Core ink + gold */
+  --ink: #0B1F3A;
+  --ink-700: #14335C;
+  --gold: #C9A227;
+  --gold-700: #A8871F;
+  --gold-50: #F5EFDC;
+
+  /* AG FinTax brand orange — reserved for the wordmark + brand accents */
+  --brand-orange: #DC5700;
+  --brand-orange-soft: #FFB596;
+
+  /* Surfaces */
+  --cream: #F7F3EC;
+  --bone: #FAFAF7;
+  --paper: #FFFFFF;
+
+  /* Slate scale */
+  --slate-900: #0F172A;
+  --slate-800: #1E293B;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748B;
+  --slate-400: #94A3B8;
+  --slate-300: #CBD5E1;
+  --slate-200: #E2E8F0;
+  --slate-100: #F1F5F9;
+  --slate-50: #F8FAFC;
+
+  /* Semantic */
+  --success: #15803D;
+  --success-50: #ECFDF5;
+  --warn: #B45309;
+  --warn-50: #FEF6E7;
+  --danger: #B91C1C;
+  --danger-50: #FEF2F2;
+
+  /* Elevation */
+  --elev: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --elev-lg: 0 2px 6px rgba(15, 23, 42, 0.06);
+  --elev-hero: 0 20px 40px -20px rgba(11, 31, 58, 0.12);
+
+  /* Aliases for shadcn / existing components */
+  --primary: var(--ink);
+  --primary-container: var(--ink-700);
+  --on-primary: #ffffff;
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--gold);
+  --secondary-container: var(--gold-50);
+  --secondary-fixed: #E0BA43;
+  --on-secondary: #1a1a1a;
+  --secondary-foreground: #1a1a1a;
+
+  --accent: var(--gold);
+  --accent-foreground: #1a1a1a;
+
+  --background: var(--cream);
+  --foreground: var(--slate-900);
+  --surface: var(--cream);
+  --surface-container-lowest: var(--paper);
+  --surface-container-low: var(--bone);
+  --surface-container: var(--slate-50);
+  --surface-container-high: var(--slate-100);
+  --surface-container-highest: var(--slate-200);
+  --surface-variant: var(--slate-100);
+  --surface-dim: var(--slate-200);
+  --surface-bright: var(--cream);
+
+  --on-surface: var(--slate-900);
+  --on-surface-variant: var(--slate-600);
+  --on-background: var(--slate-900);
+
+  --muted: var(--slate-100);
+  --muted-foreground: var(--slate-600);
+
+  --card: var(--paper);
+  --card-foreground: var(--slate-900);
+  --popover: var(--paper);
+  --popover-foreground: var(--slate-900);
+
+  --outline: var(--slate-500);
+  --outline-variant: var(--slate-200);
+  --border: var(--slate-200);
+  --input: var(--slate-200);
+
+  --destructive: var(--danger);
+  --destructive-foreground: #ffffff;
+  --error: var(--danger);
+  --success-foreground: #ffffff;
+  --warning: var(--warn);
+  --warning-foreground: #ffffff;
+
+  --ring: var(--gold);
+
+  --radius: 0.625rem; /* 10px — matches design's rounded-[10px] on cards */
+}
+
+.dark {
+  --ink: #E2EBF7;
+  --gold: #E0BA43;
+  --cream: #0A0E17;
+  --bone: #0F131D;
+  --paper: #151A26;
+
+  --slate-900: #F8FAFC;
+  --slate-700: #CBD5E1;
+  --slate-500: #94A3B8;
+  --slate-400: #64748B;
+  --slate-200: #334155;
+  --slate-100: #1E293B;
+  --slate-50: #0F172A;
+
+  --background: var(--cream);
+  --foreground: var(--slate-900);
+  --on-surface: var(--slate-900);
+  --on-surface-variant: var(--slate-500);
+  --border: var(--slate-200);
+  --card: var(--paper);
+  --popover: var(--paper);
+  --surface-container-lowest: var(--paper);
+  --surface-container-low: var(--bone);
+  --surface-container: var(--slate-100);
+}
+
+@theme inline {
+  --font-sans: 'General Sans', 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), 'Instrument Serif', Georgia, serif;
+  --font-hand: var(--font-homemade-apple), cursive;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-ink: var(--ink);
+  --color-ink-700: var(--ink-700);
+  --color-gold: var(--gold);
+  --color-gold-700: var(--gold-700);
+  --color-gold-50: var(--gold-50);
+  --color-cream: var(--cream);
+  --color-bone: var(--bone);
+  --color-paper: var(--paper);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-ring: var(--ring);
+
+  --color-surface: var(--surface);
+  --color-surface-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-container-high);
+  --color-surface-highest: var(--surface-container-highest);
+  --color-surface-lowest: var(--surface-container-lowest);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-slate-50: var(--slate-50);
+  --color-slate-100: var(--slate-100);
+  --color-slate-200: var(--slate-200);
+  --color-slate-300: var(--slate-300);
+  --color-slate-400: var(--slate-400);
+  --color-slate-500: var(--slate-500);
+  --color-slate-600: var(--slate-600);
+  --color-slate-700: var(--slate-700);
+  --color-slate-900: var(--slate-900);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: var(--radius);
+  --radius-xl: 14px;
+  --radius-2xl: 18px;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  background: var(--cream);
+  color: var(--slate-900);
+}
+
+body {
+  font-family: 'General Sans', 'Geist', ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: 'ss01', 'ss02';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-serif,
+.font-display,
+.font-headline {
+  font-family: var(--font-fraunces), 'Instrument Serif', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.font-hand {
+  font-family: var(--font-homemade-apple), cursive;
+}
+
+/* ─── Utility classes from the design prototype ───────────────── */
+
+.elev {
+  box-shadow: var(--elev);
+}
+.elev-lg {
+  box-shadow: var(--elev-lg);
+}
+.elev-hero {
+  box-shadow: var(--elev-hero);
+}
+
+/* Kept for existing components that reference shadow-ghost */
+.shadow-ghost {
+  box-shadow: var(--elev);
+}
+.shadow-ghost-lg {
+  box-shadow: var(--elev-hero);
+}
+
+.bg-ink {
+  background: var(--ink);
+}
+.text-ink {
+  color: var(--ink);
+}
+.border-ink {
+  border-color: var(--ink);
+}
+
+.bg-gold {
+  background: var(--gold);
+}
+.text-gold {
+  color: var(--gold);
+}
+.border-gold {
+  border-color: var(--gold);
+}
+
+.bg-cream {
+  background: var(--cream);
+}
+.bg-bone {
+  background: var(--bone);
+}
+.bg-paper {
+  background: var(--paper);
+}
+
+.ring-gold:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.35);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.35);
+}
+
+.divider {
+  height: 1px;
+  background: var(--slate-200);
+}
+
+/* Subtle striped placeholder */
+.stripes {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(11, 31, 58, 0.04) 0 10px,
+    rgba(11, 31, 58, 0) 10px 20px
+  );
+}
+.stripes-gold {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(201, 162, 39, 0.1) 0 10px,
+    rgba(201, 162, 39, 0) 10px 20px
+  );
+}
+
+/* Fade up stagger */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeup {
+  opacity: 0;
+  animation: fadeUp 0.7s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+/* Skeleton pulse */
+@keyframes pulseBg {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+.skeleton {
+  background: linear-gradient(90deg, #eee9df 0%, #f4efe5 40%, #eee9df 80%);
+  background-size: 200% 100%;
+  animation: pulseBg 1.2s linear infinite;
+  border-radius: 6px;
+}
+
+/* Embossed gold seal */
+.seal-ring {
+  background: radial-gradient(circle at 30% 30%, #e8c65a 0%, #c9a227 55%, #8e6f10 100%);
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.35),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* Letter paper */
+.letter-paper {
+  background: #fffdf9;
+  background-image: linear-gradient(#fffdf9, #fffdf9),
+    radial-gradient(ellipse at top, rgba(11, 31, 58, 0.04), transparent 60%);
+  box-shadow: var(--elev), var(--elev-hero);
+}
+
+/* Gold progress bar */
+.goldbar {
+  background: linear-gradient(90deg, var(--gold) 0%, #e0ba43 100%);
+}
+
+/* Document thumbnail — mimic scanned tax form */
+.docpage {
+  background: #fdfcf7;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(11, 31, 58, 0.05) 0 1px,
+    transparent 1px 28px
+  );
+  border: 1px solid var(--slate-200);
+}
+
+/* Dashed gold highlight — for extracted fields in the letter */
+.hl-gold {
+  outline: 1.5px dashed var(--gold);
+  outline-offset: 2px;
+  background: rgba(201, 162, 39, 0.08);
+}
+
+/* Hover lift */
+.lift {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.lift:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+/* Signature line */
+.sig-line {
+  border-bottom: 1px solid var(--slate-300);
+}
+
+/* Small caps */
+.smallcaps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+}
+
+/* Glass (kept for existing callers) */
+.glass {
+  background: color-mix(in srgb, var(--paper) 85%, transparent);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Navy gradient (kept for hero callers) */
+.bg-navy-gradient {
+  background: linear-gradient(180deg, var(--ink) 0%, var(--ink-700) 100%);
+}
+.bg-navy-gradient-r {
+  background: linear-gradient(90deg, var(--ink) 0%, var(--ink-700) 100%);
+}
+
+/* Gold underline — for editorial active nav */
+.underline-gold {
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.25rem;
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.25);
+  color: var(--ink);
+}
+
+/* Thin scrollbar for dense admin lists */
+.thin-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: var(--slate-200);
+  border-radius: 4px;
+}
+.thin-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--slate-300);
+}

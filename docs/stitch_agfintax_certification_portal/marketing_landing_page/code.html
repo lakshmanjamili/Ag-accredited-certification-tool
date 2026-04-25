@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgFinTax | Accredited Investor Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,700&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f4f0e9",
+                        "surface-container-low": "#f7f3ec",
+                        "on-primary-container": "#7587a7",
+                        "on-tertiary-fixed-variant": "#613f20",
+                        "primary-fixed-dim": "#b5c7ea",
+                        "primary-fixed": "#d6e3ff",
+                        "secondary-container": "#fed255",
+                        "secondary-fixed-dim": "#ecc246",
+                        "on-primary-fixed": "#071c36",
+                        "surface-tint": "#4d5f7d",
+                        "outline-variant": "#c4c6ce",
+                        "primary-container": "#0b1f3a",
+                        "on-secondary-fixed-variant": "#584400",
+                        "inverse-surface": "#31302c",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e6e2db",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#44474d",
+                        "surface": "#fdf9f2",
+                        "primary": "#000615",
+                        "on-tertiary-fixed": "#2e1500",
+                        "tertiary-container": "#321800",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc1",
+                        "on-background": "#1c1c18",
+                        "surface-dim": "#dddad3",
+                        "surface-bright": "#fdf9f2",
+                        "secondary-fixed": "#ffe08e",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1ede6",
+                        "outline": "#75777e",
+                        "surface-variant": "#e6e2db",
+                        "background": "#fdf9f2",
+                        "on-secondary-fixed": "#241a00",
+                        "on-surface": "#1c1c18",
+                        "on-secondary-container": "#735a00",
+                        "on-tertiary-container": "#a87e59",
+                        "secondary": "#755b00",
+                        "on-primary-fixed-variant": "#364764",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#0d0400",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#eebd94",
+                        "inverse-primary": "#b5c7ea",
+                        "surface-container-high": "#ebe8e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "Fraunces", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .fraunces { font-family: 'Fraunces', serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(24px);
+        }
+        .ghost-shadow {
+            shadow-color: rgba(28, 28, 24, 0.05);
+            box-shadow: 0 32px 48px -12px rgba(28, 28, 24, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-[#fdf9f2]/80 dark:bg-[#000615]/80 backdrop-blur-xl bg-surface-container-low shadow-[0_1px_0_0_rgba(196,198,206,0.15)]">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0B1F3A] dark:text-[#f1ede6]">menu</span>
+<span class="text-2xl font-serif font-bold text-[#0B1F3A] dark:text-[#fdf9f2] italic">AgFinTax</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-sm font-semibold Inter text-[#0B1F3A] border-b-2 border-[#755b00] pb-1" href="#">Home</a>
+<a class="text-sm font-semibold Inter text-[#1c1c18]/60 hover:text-[#0B1F3A] transition-colors" href="#">Solutions</a>
+<a class="text-sm font-semibold Inter text-[#1c1c18]/60 hover:text-[#0B1F3A] transition-colors" href="#">Pricing</a>
+</div>
+<button class="bg-[#755b00] text-white px-6 py-2.5 rounded-lg text-sm font-semibold Inter hover:bg-[#584400] transition-all duration-300 active:scale-[0.98]">
+                Get Certified
+            </button>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-6 py-20 md:py-32 overflow-hidden">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="fraunces text-5xl md:text-7xl font-medium tracking-tight text-primary leading-[1.1] mb-6">
+                        SEC-compliant accredited investor verification in days, <span class="italic text-secondary">not weeks.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Scale your capital raising with the steady, authoritative hand of a master accountant. High-speed verification with CPA-grade reliability.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-b from-primary to-primary-container text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition-all">
+                            Start Your Verification
+                        </button>
+<button class="border border-secondary text-secondary px-8 py-4 rounded-xl font-semibold hover:bg-secondary-container/10 transition-all">
+                            View API Docs
+                        </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-secondary/5 rounded-[2rem] blur-3xl group-hover:bg-secondary/10 transition-all duration-700"></div>
+<img alt="Financial Ledger" class="relative rounded-2xl ghost-shadow object-cover aspect-[4/5] md:aspect-auto" data-alt="Premium close-up of high-quality cream paper documents with gold fountain pen and leather textures in soft natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0edF0zHtcs1iCwwJcN4UhT_SNlKQvG8tlN_aw5xcDQI03l4ohnQHiX4nYs7135-aHMDL4IZG2EZIvoZDyIPOZkT-kgd0oVvaA3gQXMoTON-c4A6qi_wqqmcjx5P26WCHXau72L6eJtdsr8TS_D564p_gbEz0XfxPLmzMhlYWAiPEaLm-JPmA5TW6Iz0fokNlrudmVOEPjLY_TC-CPAp68W5hyx2P9UV9qqKnZ8_sIU8qWps6ccnqe-l4yuGjmPgrQOug1x4u-uFCX"/>
+</div>
+</div>
+</section>
+<!-- Trust Strip -->
+<section class="bg-surface-container-low py-12 border-y border-outline-variant/15">
+<div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-between items-center gap-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+<span class="font-headline text-lg font-medium">Reviewed by licensed CPAs</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">lock</span>
+<span class="font-headline text-lg font-medium">Bank-level 256-bit Encryption</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">security</span>
+<span class="font-headline text-lg font-medium">SOC 2 Type II Compliant</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+<span class="font-headline text-lg font-medium">SEC Rule 506(c) Certified</span>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-6xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-4xl font-medium text-primary mb-4">Precision Engineering for Compliance</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl">The digital ledger transforms complex regulatory requirements into a seamless three-step journey.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="p-8 bg-surface-container-lowest rounded-xl ghost-shadow border border-outline-variant/10 group">
+<div class="text-5xl font-headline italic text-secondary/20 mb-6 group-hover:text-secondary/40 transition-colors">01</div>
+<h3 class="text-xl font-bold mb-4">Secure Upload</h3>
+<p class="text-on-surface-variant leading-relaxed">Securely upload your tax returns, brokerage statements, or professional letters through our encrypted portal.</p>
+<div class="mt-6 flex items-center text-secondary font-semibold gap-2 cursor-pointer">
+                            Learn about security <span class="material-symbols-outlined">arrow_right_alt</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="p-8 bg-surface-container-lowest rounded-xl ghost-shadow border border-outline-variant/10 group">
+<div class="text-5xl font-headline italic text-secondary/20 mb-6 group-hover:text-secondary/40 transition-colors">02</div>
+<h3 class="text-xl font-bold mb-4">AI Extraction</h3>
+<p class="text-on-surface-variant leading-relaxed">Our proprietary Ledger-AI extracts critical financial data points with 99.9% accuracy for preliminary review.</p>
+<div class="mt-6 flex items-center text-secondary font-semibold gap-2 cursor-pointer">
+                            AI Methodology <span class="material-symbols-outlined">arrow_right_alt</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="p-8 bg-surface-container-lowest rounded-xl ghost-shadow border border-outline-variant/10 group">
+<div class="text-5xl font-headline italic text-secondary/20 mb-6 group-hover:text-secondary/40 transition-colors">03</div>
+<h3 class="text-xl font-bold mb-4">CPA Final Seal</h3>
+<p class="text-on-surface-variant leading-relaxed">A licensed US-based CPA performs the final audit and issues your formal Certificate of Accreditation.</p>
+<div class="mt-6 flex items-center text-secondary font-semibold gap-2 cursor-pointer">
+                            Meet our auditors <span class="material-symbols-outlined">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dual Audience Split -->
+<section class="py-24 px-6 bg-surface-container-low">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+<div class="bg-primary p-12 rounded-2xl text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl">person</span>
+</div>
+<h3 class="font-headline text-3xl mb-6">For Investors</h3>
+<ul class="space-y-4 mb-10">
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> One certificate, 90 days of access</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Instant sharing with multiple issuers</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Privacy-first data handling</li>
+</ul>
+<button class="bg-surface text-primary px-8 py-3 rounded-lg font-bold hover:bg-secondary-fixed transition-all">Get Certified</button>
+</div>
+<div class="bg-surface-container-highest p-12 rounded-2xl relative overflow-hidden border border-outline-variant/20">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl">business_center</span>
+</div>
+<h3 class="font-headline text-3xl mb-6">For Issuers</h3>
+<ul class="space-y-4 mb-10">
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Zero-friction onboarding for LPs</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Complete audit trail for SEC compliance</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Custom-branded verification portal</li>
+</ul>
+<button class="bg-primary text-white px-8 py-3 rounded-lg font-bold hover:bg-primary-container transition-all">Partner with Us</button>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 px-6">
+<div class="max-w-6xl mx-auto text-center mb-16">
+<h2 class="font-headline text-4xl font-medium mb-4">Transparent Professional Fees</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Straightforward pricing for high-stakes verification. No hidden administrative costs.</p>
+</div>
+<div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+<!-- Individual -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col items-center border border-outline-variant/10">
+<span class="text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-4">Individual</span>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-headline">$59</span>
+<span class="text-on-surface-variant">/verification</span>
+</div>
+<p class="text-sm text-center mb-8 h-12">Perfect for individual accredited investors participating in a single deal.</p>
+<button class="w-full py-3 border border-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all">Select Plan</button>
+</div>
+<!-- Entity -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col items-center border-2 border-secondary ghost-shadow scale-105 relative">
+<div class="absolute -top-3 bg-secondary text-white text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full font-bold">Recommended</div>
+<span class="text-xs uppercase tracking-widest font-bold text-secondary mb-4">Trust / LLC</span>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-headline">$149</span>
+<span class="text-on-surface-variant">/verification</span>
+</div>
+<p class="text-sm text-center mb-8 h-12">Complex entity structure review including operating agreements and multi-member LLCs.</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-semibold shadow-lg hover:opacity-90 transition-all">Select Plan</button>
+</div>
+<!-- Fund Bulk -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col items-center border border-outline-variant/10">
+<span class="text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-4">Fund Bulk</span>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-headline">Custom</span>
+</div>
+<p class="text-sm text-center mb-8 h-12">Unlimited verifications for funds, syndicates, and real estate investment firms.</p>
+<button class="w-full py-3 border border-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all">Contact Sales</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-gradient-to-b from-[#0B1F3A] to-[#000615] text-[#fdf9f2] w-full border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-start px-12 py-16 gap-12 w-full max-w-7xl mx-auto">
+<div class="max-w-xs">
+<span class="text-2xl font-serif text-[#755b00] italic mb-6 block">AgFinTax Ledger</span>
+<p class="text-xs font-light Inter tracking-wide leading-relaxed opacity-70">
+                    AgFinTax is a financial technology firm specializing in compliance-as-a-service. All verifications are performed by licensed independent Certified Public Accountants.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<h4 class="font-headline text-lg">Platform</h4>
+<ul class="text-xs space-y-2 opacity-70 font-light tracking-wide">
+<li><a class="hover:text-[#fdf9f2] transition-colors hover:underline decoration-[#755b00] underline-offset-4" href="#">Investor Login</a></li>
+<li><a class="hover:text-[#fdf9f2] transition-colors hover:underline decoration-[#755b00] underline-offset-4" href="#">Issuer Dashboard</a></li>
+<li><a class="hover:text-[#fdf9f2] transition-colors hover:underline decoration-[#755b00] underline-offset-4" href="#">API Documentation</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline text-lg">Legal</h4>
+<ul class="text-xs space-y-2 opacity-70 font-light tracking-wide">
+<li><a class="hover:text-[#fdf9f2] transition-colors hover:underline decoration-[#755b00] underline-offset-4" href="#">Terms of Service</a></li>
+<li><a class="hover:text-[#fdf9f2] transition-colors hover:underline decoration-[#755b00] underline-offset-4" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[#fdf9f2] transition-colors hover:underline decoration-[#755b00] underline-offset-4" href="#">Regulatory Disclosures</a></li>
+</ul>
+</div>
+<div class="space-y-4 col-span-2 md:col-span-1">
+<h4 class="font-headline text-lg">Contact</h4>
+<ul class="text-xs space-y-2 opacity-70 font-light tracking-wide">
+<li><a class="hover:text-[#fdf9f2] transition-colors hover:underline decoration-[#755b00] underline-offset-4" href="#">Contact Support</a></li>
+<li><a class="hover:text-[#fdf9f2] transition-colors hover:underline decoration-[#755b00] underline-offset-4" href="#">CPA Partners</a></li>
+<li>support@agfintax.com</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-white/5 w-full flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] opacity-40 font-light tracking-[0.2em] uppercase">
+<span>© 2024 AgFinTax Ledger. All Rights Reserved. Accredited Financial Institution.</span>
+<div class="flex gap-6">
+<span>SOC 2 TYPE II</span>
+<span>FINRA COMPLIANT</span>
+<span>CPA AUDITED</span>
+</div>
+</div>
+</footer>
+</body></html>

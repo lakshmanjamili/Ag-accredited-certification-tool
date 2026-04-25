@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Verification | AgFinTax Ledger</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f4f0e9",
+                    "surface-container-low": "#f7f3ec",
+                    "on-primary-container": "#7587a7",
+                    "on-tertiary-fixed-variant": "#613f20",
+                    "primary-fixed-dim": "#b5c7ea",
+                    "primary-fixed": "#d6e3ff",
+                    "secondary-container": "#fed255",
+                    "secondary-fixed-dim": "#ecc246",
+                    "on-primary-fixed": "#071c36",
+                    "surface-tint": "#4d5f7d",
+                    "outline-variant": "#c4c6ce",
+                    "primary-container": "#0b1f3a",
+                    "on-secondary-fixed-variant": "#584400",
+                    "inverse-surface": "#31302c",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e6e2db",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#44474d",
+                    "surface": "#fdf9f2",
+                    "primary": "#000615",
+                    "on-tertiary-fixed": "#2e1500",
+                    "tertiary-container": "#321800",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdcc1",
+                    "on-background": "#1c1c18",
+                    "surface-dim": "#dddad3",
+                    "surface-bright": "#fdf9f2",
+                    "secondary-fixed": "#ffe08e",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#f1ede6",
+                    "outline": "#75777e",
+                    "surface-variant": "#e6e2db",
+                    "background": "#fdf9f2",
+                    "on-secondary-fixed": "#241a00",
+                    "on-surface": "#1c1c18",
+                    "on-secondary-container": "#735a00",
+                    "on-tertiary-container": "#a87e59",
+                    "secondary": "#755b00",
+                    "on-primary-fixed-variant": "#364764",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#0d0400",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#eebd94",
+                    "inverse-primary": "#b5c7ea",
+                    "surface-container-high": "#ebe8e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#fdf9f2]/80 backdrop-blur-xl flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto shadow-[0_1px_0_0_rgba(196,198,206,0.15)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0B1F3A]">menu</span>
+<span class="text-2xl font-serif font-bold text-[#0B1F3A] italic">AgFinTax</span>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="text-sm font-semibold Inter text-[#0B1F3A] border-b-2 border-[#755b00] pb-1" href="#">Verify</a>
+<a class="text-sm font-semibold Inter text-[#1c1c18]/60 hover:text-[#0B1F3A] transition-colors" href="#">Vault</a>
+<a class="text-sm font-semibold Inter text-[#1c1c18]/60 hover:text-[#0B1F3A] transition-colors" href="#">Dashboard</a>
+</div>
+<button class="bg-gradient-to-r from-[#000615] to-[#0b1f3a] text-white px-5 py-2 rounded-lg text-sm font-semibold tracking-wide hover:scale-[0.99] transition-transform">
+            Get Certified
+        </button>
+</header>
+<main class="pt-32 pb-24 min-h-screen flex flex-col items-center">
+<!-- Stepper Container -->
+<div class="w-full max-w-4xl px-6 mb-16">
+<div class="flex items-center justify-between relative">
+<!-- Progress Line -->
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -z-10"></div>
+<!-- Steps -->
+<div class="flex flex-col items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold shadow-lg ring-4 ring-surface">1</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-secondary">About You</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container text-on-surface/40 flex items-center justify-center font-bold ring-4 ring-surface">2</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/40">Upload</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container text-on-surface/40 flex items-center justify-center font-bold ring-4 ring-surface">3</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/40">Verify</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container text-on-surface/40 flex items-center justify-center font-bold ring-4 ring-surface">4</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/40">Review</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container text-on-surface/40 flex items-center justify-center font-bold ring-4 ring-surface">5</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/40">Finish</span>
+</div>
+</div>
+</div>
+<!-- Content Canvas -->
+<div class="w-full max-w-3xl px-6">
+<div class="mb-12">
+<h1 class="text-5xl font-serif font-medium tracking-tight text-primary mb-4">Establish Identity</h1>
+<p class="text-on-surface-variant font-light text-lg max-w-xl leading-relaxed">
+                    To begin your accreditation, we require foundational details about your legal status and the basis of your financial standing.
+                </p>
+</div>
+<section class="space-y-12">
+<!-- Name & Entity Type -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface/60">Full Legal Name</label>
+<input class="w-full bg-surface-variant/20 border-b border-outline-variant focus:border-primary focus:bg-white focus:ring-0 transition-all py-3 px-1 text-lg font-medium placeholder:text-on-surface-variant/30" placeholder="Johnathan Q. Executive" type="text"/>
+</div>
+<div class="space-y-4">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface/60">Entity Structure</label>
+<div class="grid grid-cols-2 gap-2 p-1 bg-surface-container rounded-xl">
+<button class="bg-white text-primary text-xs font-bold py-2 rounded-lg shadow-sm">Individual</button>
+<button class="text-on-surface/60 text-xs font-bold py-2 hover:bg-surface-variant/30 rounded-lg transition-all">Joint</button>
+<button class="text-on-surface/60 text-xs font-bold py-2 hover:bg-surface-variant/30 rounded-lg transition-all">Entity</button>
+<button class="text-on-surface/60 text-xs font-bold py-2 hover:bg-surface-variant/30 rounded-lg transition-all">Trust</button>
+</div>
+</div>
+</div>
+<!-- Accreditation Selector -->
+<div class="space-y-6 pt-6">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface/60">Accreditation Basis</label>
+<div class="grid grid-cols-1 gap-4">
+<!-- Card 1 -->
+<label class="relative flex items-center p-6 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl cursor-pointer hover:bg-surface transition-all group overflow-hidden">
+<input class="hidden peer" name="basis" type="radio"/>
+<div class="absolute inset-0 border-2 border-transparent peer-checked:border-secondary rounded-2xl transition-all"></div>
+<div class="flex items-start gap-5 relative z-10">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<h4 class="font-bold text-primary">Annual Income</h4>
+<p class="text-sm text-on-surface-variant leading-snug mt-1">Earned over $200k (individual) or $300k (joint) in each of the past two years.</p>
+</div>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline-variant peer-checked:text-secondary">check_circle</span>
+</label>
+<!-- Card 2 -->
+<label class="relative flex items-center p-6 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl cursor-pointer hover:bg-surface transition-all group overflow-hidden">
+<input checked="" class="hidden peer" name="basis" type="radio"/>
+<div class="absolute inset-0 border-2 border-transparent peer-checked:border-secondary rounded-2xl transition-all"></div>
+<div class="flex items-start gap-5 relative z-10">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h4 class="font-bold text-primary">Net Worth</h4>
+<p class="text-sm text-on-surface-variant leading-snug mt-1">Individual or joint net worth exceeds $1 million, excluding primary residence.</p>
+</div>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline-variant peer-checked:text-secondary">check_circle</span>
+</label>
+<!-- Card 3 -->
+<label class="relative flex items-center p-6 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl cursor-pointer hover:bg-surface transition-all group overflow-hidden">
+<input class="hidden peer" name="basis" type="radio"/>
+<div class="absolute inset-0 border-2 border-transparent peer-checked:border-secondary rounded-2xl transition-all"></div>
+<div class="flex items-start gap-5 relative z-10">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-bold text-primary">Professional License</h4>
+<p class="text-sm text-on-surface-variant leading-snug mt-1">Holder in good standing of Series 7, Series 65, or Series 82 licenses.</p>
+</div>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline-variant peer-checked:text-secondary">check_circle</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Bottom Actions -->
+<div class="mt-16 flex items-center justify-between py-8 border-t border-outline-variant/10">
+<button class="text-on-surface/40 hover:text-primary transition-colors text-sm font-bold uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                    Cancel
+                </button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-12 py-4 rounded-xl font-bold flex items-center gap-3 hover:scale-[0.98] active:scale-95 transition-all shadow-xl shadow-primary/10">
+                    Next Step
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Visual Anchor - Background Motif -->
+<div class="fixed inset-0 pointer-events-none -z-20 opacity-[0.03]">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-no-repeat bg-right-top bg-contain" data-alt="subtle watermark style texture of a vintage financial ledger page with faint grid lines and script handwriting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4yyUpLPktNe2WMSJiacSkTrgmFcz2pHlqr8RIWIb7Zw7ZDpcA6BvGxEd-fmXBq3i4NIUgnGwQCBfjWaIzVfWXRMj-hLZ1sfjJ1L6X3IAVWK7h1mGqXQYCp6VUzcE-xulR6PSVg14bcYKqbMtDFOpN5mgh16Oe00A2MtHC7O7NtUANNHfLfJW-O6dNZBsXfStUaE-UludrLZG8w6wtUQkSwk9IeY1LgSd6YCrltFZ5yatD8p6gY4m-OENzX_DDNFlZd39zolM9E54C')"></div>
+</div>
+<!-- Footer -->
+<footer class="bg-gradient-to-b from-[#0B1F3A] to-[#000615] flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full border-t border-white/5">
+<div class="flex flex-col gap-2">
+<span class="text-xl font-serif text-[#755b00]">AgFinTax Ledger</span>
+<p class="text-xs font-light Inter tracking-wide text-[#fdf9f2]/70">© 2024 AgFinTax Ledger. All Rights Reserved. Accredited Financial Institution.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-[#fdf9f2]/70 hover:text-[#fdf9f2] text-xs font-light Inter tracking-wide hover:underline decoration-[#755b00] underline-offset-4" href="#">Terms of Service</a>
+<a class="text-[#fdf9f2]/70 hover:text-[#fdf9f2] text-xs font-light Inter tracking-wide hover:underline decoration-[#755b00] underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-[#fdf9f2]/70 hover:text-[#fdf9f2] text-xs font-light Inter tracking-wide hover:underline decoration-[#755b00] underline-offset-4" href="#">Contact Support</a>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-[#fdf9f2]/90 backdrop-blur-2xl rounded-t-3xl border-t border-[#c4c6ce]/10 shadow-[0_-8px_24px_rgba(28,28,24,0.05)]">
+<div class="flex flex-col items-center text-[#0B1F3A]/40">
+<span class="material-symbols-outlined">home_storage</span>
+<span class="text-[10px] uppercase tracking-widest font-bold Inter">Home</span>
+</div>
+<div class="flex flex-col items-center text-[#755b00] scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+<span class="text-[10px] uppercase tracking-widest font-bold Inter">Verify</span>
+</div>
+<div class="flex flex-col items-center text-[#0B1F3A]/40">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] uppercase tracking-widest font-bold Inter">Vault</span>
+</div>
+<div class="flex flex-col items-center text-[#0B1F3A]/40">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] uppercase tracking-widest font-bold Inter">Profile</span>
+</div>
+</nav>
+</body></html>
