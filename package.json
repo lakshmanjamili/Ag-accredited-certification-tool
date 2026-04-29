@@ -21,6 +21,8 @@
     "user:create": "dotenv -e .env.local -- tsx scripts/create-user.ts",
     "test:extract": "dotenv -e .env.local -- tsx scripts/test-extract.ts",
     "pdfs:test": "tsx scripts/generate-test-pdfs.ts",
+    "pdfs:test:extra": "tsx scripts/generate-test-pdfs-extra.ts",
+    "pdfs:test:all": "npm run pdfs:test && npm run pdfs:test:extra",
     "test": "vitest"
   },
   "dependencies": {
